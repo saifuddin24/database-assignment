@@ -1,31 +1,33 @@
-
+/*
 CREATE TABLE IF NOT EXISTS `works` (
-  `employee-name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `company-name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `employee-name` varchar(50),
+  `company-name` varchar(50),
   `salary` double(8,2) NOT NULL
 )
 ;
 
 CREATE TABLE IF NOT EXISTS `managers` (
-  `employee-name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `manager-name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `employee-name` varchar(50),
+  `manager-name` varchar(50),
   PRIMARY KEY (`employee-name`)
 )
 ;
 
 CREATE TABLE IF NOT EXISTS `employee` (
-  `employee-name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `street` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `employee-name` varchar(50),
+  `street` varchar(200),
+  `city` varchar(40),
   PRIMARY KEY (`employee-name`)
 );
 
 CREATE TABLE IF NOT EXISTS `company` (
-  `company-name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `company-name` varchar(50),
+  `city` varchar(40),
   PRIMARY KEY (`company-name`)
 )
 ;
+
+*/
 
 #Ans to the question 1(a)
 SELECT 
@@ -58,7 +60,7 @@ JOIN employee AS m ON m.`employee-name` = wu.`manager-name`
 
 WHERE e.city = m.city AND e.street = m.street
 
-
+;
 #Ans to the question 1(d)
 SELECT 
 	employee.`employee-name`
